@@ -37,7 +37,7 @@ function fnTemporal(){
 }
 
 var persona = {
-    nombre: "suaza",
+    nombre: "",
 }
 
 saludar(fnTemporal, persona);

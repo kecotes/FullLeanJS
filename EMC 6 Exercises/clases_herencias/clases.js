@@ -58,7 +58,7 @@ let Usuario = class {
     }
 
     decirName(){
-        console.log(`Tu nombre es ${this.nombre}`);
+        console.log(`Tu nombre es ${this.nombre} y tu correo ${this.email}`);
     }
 
 }
@@ -66,7 +66,21 @@ let Usuario = class {
 // kev es una instancia de la clase Usuario
 let kev = new Usuario();
 
+let jose = class {
+    constructor(){
+
+    }
+
+    verlaNada(){
+        console.log( "sad");
+    }
+}
+
+let josue = new jose();
+
 kev.decirName();
+josue.verlaNada();
 
 console.log( typeof kev);
 console.log(kev instanceof Usuario)
+console.log(josue instanceof kev )
