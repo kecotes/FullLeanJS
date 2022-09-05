@@ -104,10 +104,20 @@ console.log(arrowSimply());
 console.log(arrowSymplyParam(1));
 console.log(arrowTwoParam(2,2));
 
+console.log('***Ámbito léxico de this en las funciones***');
+// una de las principales diferencias de las funciones flecha respecto a las funciones tradicionales, es el valor de la palabra clave this, que no siempre es la misma.
+//si utilizamos una función de forma global en nuestro programa, no notaremos ninguna diferencia
 
+const c = function() {
+  console.log(this);
+}
+const d = () => {
+  console.log(this);
+}
+c(); //this devuelve el Window
+d(); //this devuelve el Window
 
-//Una buena práctica es utilizar funciones tradicionales como las funciones 
-//de primer nivel y, luego, en su interior o en callbacks, utilizar funciones flecha, por el tema del this
+// si utilizamos una función en el interior de un objeto, como suele ser el caso más habitual, si encontraremos diferencias
 
 padre = {
     a: function() {
@@ -118,5 +128,5 @@ padre = {
     }
 };
 
-padre.a(); //padre
-padre.b(); //Window
+padre.a(); //El this devuelve el padre de la funcion
+padre.b(); //Con Arrow Function el this devuelve el Window
