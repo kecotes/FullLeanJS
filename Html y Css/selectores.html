@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores</title>
+</head>
+<body>
+
+    <p>Escoge la opción para ti</p>
+    
+    <button class="classic">Option1</button>
+    <button class="classic">Option2</button>
+    <button class="open primary large">Abrir</button>
+
+    <section class="contaier">
+        <div class="title">
+            Selectores Avanzados
+        </div>
+
+        <div class="content-alert">Revisar</div>
+        <div class="content-warning">Corregir</div>
+    </section>
+
+
+    <style>
+
+        button.classic {
+            background-color:teal;
+            color:black;
+        }
+
+        /*sólo se aplicarán los estilos cuando el elemento HTML <button> tenga una clase classic, una clase primary y una clase large. 
+        Si falta alguna de ellas, no se aplicará el estilo.*/
+        button.open.primary.large {
+            background: violet;
+        }
+
+        /*Selectores avanzados*/
+        .title, 
+        .content-alert, 
+        .content-warning {
+            border: 5px black solid;
+            background: tomato ;
+        }
+
+
+    </style>
+</body>
+</html>
