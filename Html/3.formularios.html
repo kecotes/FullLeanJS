@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios Html</title>
+</head>
+<body>
+    
+    <form action="/send.php" method="post" name="form" enctype="multipart/form-data">
+
+        <fieldset>
+
+            <legend>Datos personales</legend>
+            
+            <!-- el label permite que haya semantica entre el titulo y el input, click en titulo se selecciona el input-->
+            <label>
+                Nombre:
+                <!-- Spellcheck para permitir error gramatical, y validaciones basicas, tamaño entre 5 y 50 caracteteres, campo obligatorio-->
+                <input type="text" name="nombre" placeholder="Escriba su nombre" spellcheck="true" minlength="5" maxlength="40" required>
+            </label>
+
+            <label>
+                Usuario:
+                <!-- Validación con atributo pattern: Solo se permiten letras (mayúsculas y minúsculas) y números, entre 5-40 carácteres-->
+                <input type="text" name="nombre" placeholder="Escriba su nombre" spellcheck="true" minlength="5" maxlength="40" required pattern="[A-Za-z0-9]{5,40}" title="Letras y números. Tamaño minimo 5. Tamaño máximo 40" />
+            </label>
+
+            <label>
+                Modelo de Auto:
+                <!-- En vez de hacer un select, optamos por un input con validación que solicita cierto tipos de modelos de auto-->
+                <input type="tex" name="auto" placeholder="Escriba su modelo de auto" required pattern="A|a(1|3|4|15)" title="Modelo de autos posibles: A1, A3, A4 Y A15">
+            </label>
+
+            Capcha (Numero entre 10 y 50, de 5 en 5):
+            <input type="number" name="validacion" value="25" min="10" max="50" step="5">
+
+            Misma Capcha con Range:
+            <input type="range" name="validacion2" value="25" min="10" max="50" step="5">
+
+            Fecha Nacimiento:
+            <input type="date" name="fecha" min="2010-03-01" max="2010-03-05" step="2">
+                        
+        </fieldset>
+
+        <p>
+            <!-- Solo selecciona una de las dos al poner el mismo name-->
+            Sexo:
+            <input type="radio" name="sexo" value="H" /> Hombre
+            <input type="radio" name="sexo" value="M" /> Mujer
+        </p>
+
+        <!-- Con la etiqueta label podemos establecemos relación semantica del texto con el campo check-->
+        <label>
+            <input type="checkbox" name="empresa" checked />
+            ¿Eres autónomo/empresa?
+        </label>
+
+        <!-- Se puede seleccionar distintas opciones con multiple, optgroup no es seleccionable y sirve para agrupar y organizar más la lista-->
+        <select name="combo" multiple>
+            <optgroup label="Opciones básicas">
+                <option value="1" label="Opcion 1"> </option>
+            </optgroup>
+
+            <optgroup label="Opciones avanzadas">
+                <option value="2" label="Opcion 2"></option>
+                <option value="3" label="Opcion 3"></option>
+            </optgroup>
+        </select>
+
+        <!-- Un campo de texto con una lista despeglable de options -->
+        <input type="text" list="items">
+        <datalist id="items">
+            <option value="1"> Opcion 1</option>
+            <option value="2"> Opcion 2</option>
+            <option value="3"> Opcion 3</option>
+        </datalist>
+
+       <!-- Color picker --> 
+        Selecciona el color deseado:
+        <input type="color" name="color" value="#1FD44A">
+
+        Telefono:
+        <input type="tel" name="telefono" placeholder="Introduzca Telefono">
+
+        Email:
+        <input type="email" name="corrreo" placeholder="Introduzca Correo">
+
+        Contraseña
+        <!-- Validación basica; Contraseña obligatoria, minimo 11 carácteres-->
+        <input type="password" name="pass" placeholder="Introduzca su contraseña" min="11" required>
+
+        <!-- Un medidor, se puede utilizar para medir la seguridad de contraseña -->
+        <meter min="0" max="100" low="25" high="75" optimum="100" value="75"></meter>
+
+        Pagina Web:
+        <input type="url" name="web" placeholder="https://tu-web.com">
+        
+        Comentarios:
+        <textarea name="comentarios" spellchech="true" cols="80" rows="20" placeholder="Escriba su documento aquí..."></textarea>
+
+        <input type="hidden" name="infoAdicional">
+
+        <progress max="100" value="25"></progress>
+
+        <!-- Boton que envia el formulario, lo mismo que submit pero es una imagen-->
+        <input type="image" src="test.jpg" width="80" height="58">
+
+        <!-- Botón alternativo de envío -->
+        <input type="submit" value="Enviar al Dpto Marketing" formmethod="post" formaction="/send-mkt.php" />
+
+    </form>
+
+</body>
+</html>

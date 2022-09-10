@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <style>
+
+        .Tabla-Animales{
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <table class="Tabla-Animales">
+            <tr>
+                <th>Gato</th>
+                <th>Perro</th>
+            </tr>
+            <tr>
+                <td>Maulla</td>
+                <td>Ladra</td>
+            </tr>
+            <tr>
+                <td colspan="2">Comen</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <table class="Tabla-Animales">
+            <tfoot>
+                <tr>        
+                    <td>Pie de pagina 1</td>
+                    <td>Pie de pagina 2</td>
+                </tr>
+            </tfoot>
+
+            <thead>
+                <tr>
+                    <th>Columna 1</th>
+                    <th>Columna 2</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Celda 1</td>
+                    <td>Celda 2</td>
+                </tr>
+            </tbody>
+
+            <caption>
+                La mejor tabla
+            </caption>
+
+        </table>
+    </section>
+
+    <section>
+        <!-- etiquetas para agrupar o seleccionar columnas y así poder realizar tareas sobre ellas -->
+        <table>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+            <tr>
+                <td>Data 4</td>
+                <td>Data 5</td>
+                <td>Data 6</td>
+            </tr>
+            <!-- span permite que las dos columnan adyacentes a la primera se pinten de amarillo -->
+            <colgroup>
+                <col style="background:red">
+                <col span="2" style="background:yellow">
+            </colgroup>
+        
+        </table>
+
+    </section>
+    
+</body>
+</html>

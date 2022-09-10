@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+                margin: 20px;
+                position: flex;
+                border: 20px inset #325932; /* Es un atajo para no tener que escribir 3 propiedades 3 lineas como abajo*/
+            }
+            /* Heredan los atributos :O. Aplica el mismo atributo a todos los lados*/
+            .predeterminado{
+                border-color: red;
+                border-width: 2px;
+                border-style: solid;
+            }
+            /* 3 parámetros. Aplica al top, al left/right y al bottom */
+            .parametros3{    
+                border-color: red blue green;
+                border-width: 2px 10px 5px;
+                border-style: solid dotted solid;
+            }
+            /* 4 parámetros. Aplica al top, right, bottom y left. */
+            .parametros4{
+                border-color: red blue green pink;
+                border-width: 2px 10px 5px 12px;
+                border-style: solid dotted solid groove;
+            }
+
+            /* Bordes especificos, solamente modificacmos el top 
+            si colocaramos el border-top antes del border, este último sobreescribiría los valores de border-top 
+            **herencia** y no funcionaría de la misma forma.*/
+            .bordeespecifico {
+                border: 5px solid red;
+                /* border-top-width: 15px;
+                border-top-color: orange;
+                border-top-style: ridge;  abajo se simplifica esto*/ 
+                border-top: 15px ridge orange;
+            }
+            .border_radius{
+                border: skyblue dotted 2px;
+                border-radius: 15px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="predeterminado">loremipsum wrevg3rb</div>
+        <div class="parametros3">loremipsum wrevg3rb</div>
+        <div class="parametros4">loremipsum wrevg3rb</div>
+        <div >loremipsum wrevg3rb</div>
+        <div class="bordeespecifico"></div>
+        <div class="border_radius"></div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function toggleHidden(selector) {
+            element = document.querySelector(selector);
+            console.log(element);
+            element.hidden = element.hidden ? false : true;
+        }
+
+    </script>
+</head>
+<body>
+    
+    <table style="border: 1px solid black;">
+        <!-- Table footer: pie de la tabla (tfoot) -->
+        <tfoot>
+          <tr>
+            <td>Pie de tabla 1</td>
+            <td>Pie de tabla 2</td>
+          </tr>
+        </tfoot>
+        <!-- Table header: cabecera de la tabla (thead) -->
+        <thead>
+          <tr>
+            <th>Columna 1</th>
+            <th>Columna 2</th>
+          </tr>
+        </thead>
+        <!-- Table body: cuerpo de la tabla (tbody) -->
+        <tbody>
+          <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+          </tr>
+        </tbody>
+        <!-- Leyenda o título de la tabla -->
+        <caption>
+          Título de la tabla
+        </caption>
+      </table>
+
+    <dialog id="ms">
+        <p>¡Hola! Soy Sho</p>
+        <button id="close" onclick="document.getElementById('ms').close()">Ok!</button>
+    </dialog>
+
+    <button id="show" onclick="document.getElementById('ms').show()">Mostrar</button>
+
+    <dialog id="ms2">
+        <h2>¡Que no Capo!</h2>
+        <img src="test.jpg" alt="Capo" />
+        <p>Los lgtb no entran!</p>
+        <button id="close2" onclick="document.getElementById('ms2').close()">Ok :(</button>
+    </dialog>
+
+    <button id="show2" onclick="document.getElementById('ms2').showModal()">Ver</button>
+
+    <!-- Texto que se pued editar :0-->
+    <h1 contenteditable>Titulo ContentEditable</h1>
+    <div contenteditable>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi ullam molestiae est nisi temporibus libero iure placeat odit eligendi? Sequi ipsam enim nobis labore facere qui esse in recusandae aliquid.</p>
+    </div>
+
+    <!-- La diferencia entre el atributo hidden o utilizar estilos es que mediante CSS podemos mostrar elementos 
+        dependiendo de acciones del usuario o del medio en el que estén -->
+    <div id="info" hidden>Información</div>
+    <button onClick="toggleHidden('#info')">
+    Mostrar/ocultar información
+    </button>
+</body>
+</html>

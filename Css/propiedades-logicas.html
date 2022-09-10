@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <style>
+        body{
+            /* writing-mode: vertical-rl; */
+            /*writing-mode: vertical-lr;*/
+            background-color: aquamarine;
+        }
+
+        .box{
+            /*Propiedades lógicas*/
+            inline-size: 150px; /* Ancho */
+            block-size: 150px; /* Alto */
+            border-block-start: 50px groove hotpink;
+            border-block-end: 50px solid indigo;
+
+            /*Otras propiedas*/
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background: firebrick;
+            color:azure;
+            font-size:medium;
+        }
+
+        .box-margin{
+            display: flex; /* Flexibiliza el div */
+            align-items: center; /* Centra el div en el eje y */
+            justify-content: center; /* centra el div en el eje x */
+            background: gold;
+            margin-block: 10px;
+            margin-inline: 10px;
+            inline-size: 300px;
+            block-size: 300px;
+        }
+        .box-border{
+            border: 10px solid black;
+            inline-size:210px;
+            block-size:210px;
+        }
+        .box-pading{
+            background: rgb(48, 26, 143);
+            padding-block: 20px;
+            padding-inline: 20px;
+            inline-size:180px;
+            block-size:180px;
+        }
+        .content{
+            inline-size: 150px;
+            block-size: 150px;
+            background: blanchedalmond;
+            color:brown;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Holis kevinciño</div>
+
+    <div class="box-margin">
+        <div class="box-border box-margin">
+            <div class="box-padding">
+                <div class="content box-margin">
+                    Tratamos sin exíto de hacer el modelo de cajas
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

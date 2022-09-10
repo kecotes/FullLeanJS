@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Propierties</title>
+    <style>
+        .parent{
+            --background-color: black;
+            color: white;
+        }
+        .first{
+            --background-color: purple;
+        }
+
+        .child{
+            /* Buena practica poner la custom propierties y como segundo parametro 
+            el valor por defecto en el caso de que esa propiedad no esté definida en el ámbito actual */
+            background: var(--background-color, blue);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Los dos primeros elementos .child tomarán color negro, ya que se le aplica a .parent (e hijos).
+        El primer elemento .child se sobreescribe con color púrpura, ya que se le aplica a .first.
+        El tercer elemento no tendrá ninguna variable definida, por lo que tomará color azul.-->
+    <div class="parent">
+        <div class="first child">first child</div>
+        <div class="second child">second child</div>
+    </div>
+    <div class="third child">third child</div>
+</body>
+</html>

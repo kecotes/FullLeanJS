@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 
+            Esta función busca la etiqueta HTML que tiene un id="num", y mediante .textContent modificamos su contenido. 
+            El nuevo contenido es e.detail que no es más que un dato que se encuentra en el evento que se ha disparado. 
+            Ese dato devuelve el número de veces seguidas (contador) que el usuario pulsó sobre la imagen.
+        */
+        function updateCounter( e ) {
+            document.querySelector("#num").textContent = e.detail;
+        }
+    </script>
+</head>
+<body>
+    
+    <div>
+        <img src="test.jpg" alt="capo" onClick="updateCounter(event)" />
+        <p>Has hecho clic al capo anti lgtb <span id="num">0</span> veces</p>
+    </div>
+
+    <!-- Existen muchos otros eventos, prácticamente uno para cada acción que pueda ocurrir en un documento HTML. -->
+
+    
+</body>
+</html>

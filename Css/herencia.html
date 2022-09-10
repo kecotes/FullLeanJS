@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Herencia</title>
+    <style>
+
+        /* La herencia hará que los parrafos hereden el color ver, pero los demás atributos no porque seria raro :v */
+        body {
+            color: green;
+            border-width: 2px;
+            border-style: solid;
+            border-color:rgb(39, 43, 43);
+        }
+        /* Forzamos a que este div herede al ponerle inherit */
+        div{
+            border: inherit;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="first">
+        <p>Párrafo</p>
+    </div>
+    <div id="second">
+        <span>Capa</span>
+    </div>
+
+</body>
+</html>

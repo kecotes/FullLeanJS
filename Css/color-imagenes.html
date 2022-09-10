@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colores, fondos y degradados</title>
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="primero"></div>
+        <div class="sengundo"></div>
+        <div class="tercero"></div>
+        <div class="cuarto"></div>    
+        <div class="gradient"></div>
+    </div>
+    
+    <h3>Imagenes y Objetos</h3>
+
+    <div class="objectFill">
+        <div class="imagin"><img src="/images/FcKNBsZXoAQttdW.jpeg" alt=""></div>
+        <div class="imagin"><img src="/images/FcKNBsZXoAQttdW.jpeg" alt=""></div>
+    </div>
+
+    <style>
+        .contenedor{
+            display: flex
+        }
+        .primero{
+            background-color: brown;
+            opacity: 70%; /* Afecta al elemento y a todos los hijos*/
+            align-items:center;
+            justify-content: center;
+            block-size: 190px;
+            inline-size: 800px;
+            background-image: url(/images/FQwFTMfX0AIMte_.jpg);
+            background-repeat: repeat-x ; /* Se repite la imagen y como */
+            background-attachment: scroll; /*especificará si la imagen de fondo seguirá el desplazamiento del usuario al hacer scroll*/
+        }
+
+        .sengundo{
+            background-color:cornflowerblue;
+            background-image: url(/images/FQwFTMfX0AIMte_.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 20%; /* ( x , y ) permite desplazar la imagen en la zona especificada */
+            inline-size:900px;
+            block-size:400px;
+            background-image: linear-gradient(cornflowerblue, brown) ;
+            background-size: 250px 300px; 
+            background-size: 250px 300px; /*una imagen de fondo toma automáticamente el tamaño de la imagen, podemos editarla nosotros*/
+        }
+
+        .tercero{
+            background-image: url(/images/FcKNBsZXoAQttdW.jpeg), url(/images/FX1xcl9UIAA0TO_.jpg);
+            inline-size: 500px;
+            block-size: 500px;
+            background-size: 250px 250px;
+            background-repeat: no-repeat auto; /*Al tener dos imagenes, la spropiedades background se podran aplicar 2 valores tambien*/
+            background-position: center;
+        }
+
+        .cuarto{
+            /*Simplificamos todo de allá arriba en una sola linea*/
+            inline-size: 1000px;
+            block-size: 500px;
+            background: turquoise url(/images/FZ1I5I9WAAAtMSr.jpg) no-repeat center ;
+            background-size: 50%;
+        }
+
+        .gradient{
+            inline-size: 800px;
+            block-size: 200px;
+
+            /* Básico, con colores con distancias equilibradas */
+            /*background: linear-gradient(to right, black, blue, gold, green, red);*/
+
+            /* Equivalente al anterior */
+            background:
+            linear-gradient(
+                to right,
+                black 0%,     /* Color 100% negro en el punto 0% y comienza a cambiar */
+                blue 25%,     /* Color 100% azul en el punto 25% y comienza a cambiar */
+                gold 50%,     /* Color 100% dorado en el punto 50% y comienza a cambiar */
+                green 75%,    /* Color 100% verde en el punto 75% y comienza a cambiar */
+                red 100%      /* Color 100% rojo en el punto 100% */
+            );
+        }
+
+        /*Nos va a permitir cambiar el modo en el que se rellena una imagen <img>. una imagen, que tiene su propio tamaño, es notablemente superior a los elementos contenedores que la van a contener.
+        Por defecto, la imagen tiene su propio tamaño y se desbordará, pero nos podría interesar cambiar el tamaño para que se adapte al contenedor padre. Para ello, utilizaremos los diferentes valores de la propiedad object-fit*/
+        .objectFill{
+            display: flex;
+        }
+        .imagin{ 
+            margin: 10px;
+            width:250px;
+            height:250px;
+            background:lightblue;
+        }
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: scale-down;
+        }
+
+        
+    </style>
+</body>
+</html>

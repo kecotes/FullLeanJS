@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=st|, initial-scale=1.0">
+    <title>Funciones CSS</title>
+</head>
+<body>
+
+    <div class="elemento">
+
+    </div>
+
+    <div class="elemento2"></div>
+    <div class="elemento3"></div>
+    <div class="elemento4" data-author="kev"></div>
+    <style>
+        /*Funcion calc() para calcular valores precalculados, nosotros no sabemos cuanto suman pero el navegador si*/
+        .elemento{
+        width: calc(200px + 1em);
+        height: 100px;
+        background: blue;
+        }
+
+        /*Funcion min() os permite elegir el valor más pequeño de 2 o más posibilidades*/
+        /*Esto aplicaría un width de 200px, siempre y cuando el 25% del elemento padre sea más grande de 200px*/
+        .elemento2 {
+            width: min(140px, 25%);
+            height: 200px;
+            background: forestgreen;
+        }
+
+        .elemento3 {
+            width: max(200px - 100px, 25%, 14vw);
+            height: 200px;
+            background: wheat;
+        }
+
+        /*Función attr() Permite obtener el valor de un atributo HTML y utilizarlo desde CSS*/
+        .elemento4::before{
+            content: attr(data-author);
+            font-size: 4em;
+            color:coral;
+            /*Por medio de una pseudoclase CSS, utilizando la propiedad content, le pedimos al navegador 
+            que utilice el metadato del atributo data-author del elemento donde se le está aplicando el CSS para mostrarlo como contenido.*/
+        }
+
+    </style>
+</body>
+</html>
