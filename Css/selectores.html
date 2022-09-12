@@ -21,6 +21,37 @@
         <div class="content-warning">Corregir</div>
     </section>
 
+    <!-- --> 
+    <div id="pagina" class="menu">
+        Selector descendiente: aplicamos css a todos los elementos div que estén dentro del elemento id="pagina"</div>
+        <div class="options">
+          <ul>
+            <li><a href="/one">Option 1</a></li>
+            <li><a href="/two">Option 2</a></li>
+            <li><a href="/three">Option 3</a></li>
+          </ul>
+        </div>
+        <div>tambien le pone el background</div>
+    </div>      
+    
+    <div id="pagina2">
+        Selector hijo: en lugar de seleccionar todos los elementos descendientes, seleccionar sólo los descendientes directos del elemento con el símbolo >
+        <div>
+            <div>este no es hijo de pagina2</div>
+          <ul>
+            <li><a href="/one">Option 1</a></li>
+            <li><a href="/two">Option 2</a></li>
+            <li><a href="/three">Option 3</a></li>
+          </ul>
+        </div>
+        <div>tambien le pone el background</div>
+    </div>  
+
+    <div class="s">
+    <p>Selector universal secciona todos los elementos *
+        <em>hola</em> <strong>khe tal</strong>aaa
+    </p>
+    </div>
 
     <style>
 
@@ -43,7 +74,26 @@
             background: tomato ;
         }
 
+        /*Selector descendiente: aplicamos css a todos los elementos <div> que estén dentro del elemento <div id="pagina">*/
+        #pagina div{
+            background-color: aquamarine;
+        }
 
+        /* Le ponemos color orange a todas las etiquetas <a> del menu*/
+        /*Forma 2, menos especifica y más consica, mejor opción*/
+        .menu a {
+            color: orange;
+        }
+
+
+        /*Selector hijo: en lugar de seleccionar todos los elementos descendientes, seleccionar sólo los descendientes directos del elemento con el símbolo >*/
+        #pagina2 > div{
+            background-color: bisque;
+        }
+
+        div.s * {
+            color:yellowgreen;
+        }
     </style>
 </body>
 </html>
