@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atributos</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Atributos CSS</h1>
+        <h2>Formas de seleccionar elementos según sus atributos</h2>
+        <p>en algunos casos puede resultar muy potente ya que podemos seleccionar elementos HTML dependiendo de sus atributos y respectivos valores.</p>
+        <img src="./images/FcKNBsZXoAQttdW.jpeg" alt="" srcset="" width="200px" height="200px">
+        <a href="https:/postman.com">post</a>
+
+        <div class="pro">
+            <a href="local.pdf">pdf</a>
+            <a href="inte.word">word</a>
+        </div>
+    </div>
+    
+
+    <style>
+        .main {
+            font-family:   Verdana, sans-serif;
+            font-size: 0.8rem;
+            color: #333;
+        }
+
+        /*Con atributo css modificamos las propiedades width */
+        [width] {
+            width: 800px;
+        }
+
+        /*En lugar de un valor específico, también podemos querer indicar un fragmento de texto que debe estar incluído, pero que no es el texto íntegro, casando con varias posibles coincidencias*/
+        a[href*="postman"]{
+            background-color: orangered;
+        }
+
+        .pro{
+            margin-top: 50px;
+        }
+
+        /*mostrará un icono (icon_url.png) antes (::before) de cualquier enlace con el atributo href*/
+        .pro a[href]::before {
+            content: url(./images/FQwFTMfX0AIMte_.jpg);
+            padding-right: 3px;
+        }
+
+       .pro a[href$=".pdf"]::before {
+            content: url(./images/FcKNBsZXoAQttdW.jpg);
+        }
+
+        .pro a[href]::after {
+            content: ": " attr(href);
+            display: inline-block;
+            color: #666;
+        }
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PseudoClases</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="intro">
+            <h2>Pseudoclases</h2>
+            <p>Se utilizan para hacer referencia a ciertos comportamientos de los elementos HTML. Así como los combinadores CSS se utilizan para dar estilos dependiendo de donde estén colocados en la estructura del HTML, las pseudoclases se utilizan para dar estilos a elementos respecto al comportamiento que experimentan en determinado momento.</p>
+    
+        </div>
+
+        <div class="pseudoclases">
+            <p>Existen algunas pseudo clases orientadas a los enlaces.</p>
+            <p>Otras de raton y movimiento</p>
+            <a href="" class="active">open 1</a>
+            <div class="enlaces">
+                <a href="">open 2</a>
+                <a href="">open 3</a>
+                <option>Yo tambien soy hijo de enlace</option>
+            </div>
+
+            <div class="form">
+                <input type="email" name="email" placeholder="Correo">
+                <input type="password" placeholder="Contraseña (Obligatoria)" required>
+                <input type="text" placeholder="CC (Obligatoria)" required>
+                <input type="text" name="age" class="validado" placeholder="Digite su Edad" pattern="[0-9]+">
+                <input type="text" name="text" disabled>
+                <input type="text" name="response" value="La respuesta es..." readonly>
+                <select name="" id="" >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <input type="datetime" name="" id="">
+                <input type="range" name="" id="">
+
+                <input type="button" value="enviar">
+            </div>
+        </div>
+    </div>
+    
+    
+    <style>
+        .pseudoclases * {
+            margin: 5%;
+        }
+
+        /*Pseudoclases de enlaces*/
+        /*Aplica estilos cuando el enlace ha sido visitado anteriormente.*/
+        .enlaces a:visited {
+            color: burlywood;
+            font-weight: bold;
+        }
+
+        /*Pseudoclases de ratón*/
+        /*Aplica estilos cuando el enlace no ha sido visitado todavía.*/
+        .active:active{
+            color: brown;
+            font-weight: bold;
+            border: 5px solid;
+        }
+
+        /* Usuario mueve el ratón sobre un enlace y aplica un estilo. Es muy utilizada */
+        .pseudoclases p:hover {
+            background-color: cyan;
+            padding: 2px
+        }
+
+        /*A todos los hijos de la clase enlace aplicale hover*/
+        .enlaces > :hover {
+            background-color:violet;
+        }
+        
+        /*Pseudoclases de interacción */
+        /*Cuando estamos posicionados en un campo se dice que ese campo tiene el foco, mientras que al pulsar TAB y saltar al siguiente, decimos que pierde el foco*/
+        input:focus {
+            border: 4px dotted #444;
+        }
+
+        /*Pseudoclases de activación*/
+        /*Se puede aplicar estilos a elementos active/disable con las pseudoclases :active o :disabled*/
+        input:disabled {
+            background-color: yellow;
+        }
+
+        /*nos permiten seleccionar y diferenciar elementos que se encuentran en modo de solo lectura*/
+        input:read-only {
+            background-color: blueviolet;
+            color: whitesmoke;
+        }
+
+        /*Pseudoclases de validación*/
+        /*Le estoy dando estilo a los input requeridos*/
+        input:required {
+            color:aliceblue;
+            background-color: rgb(84, 144, 155);
+        }
+
+        /*Sirve para validar la información sumistrada en conjunto con el pattern, si el pattern valida correctamente se aplican estilos en ambos caso, acá, rojo no paso verde si*/
+        .validado:valid {
+            color: white;
+            background-color: green;
+        }
+
+        .validado:invalid {
+            background-color: darkred;
+            color: white;
+        }
+
+        input::placeholder{
+            color: white;
+        }
+
+
+    </style>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reglas CSS</title>
+</head>
+<body>
+    
+    <div class="main">
+        <h1>Reglas CSS, precedidas por el carácter @</h1>
+        <p>En CSS tenemos las denominadas «at-rules» (reglas precedidas del carácter @). Son un tipo de declaración especial que permite indicar comportamientos especiales en muchos contextos.</p>
+        <div class="reglas">
+            <h2>Regla @import</h2>   
+            <p>es una regla de CSS que permite cargar un fichero .css externo, leer sus líneas de código e incorporarlo al archivo actual</p> 
+            <p></p>
+        </div>
+    </div>
+
+
+
+    <style>
+        @import url("menu/sidebar.css");         /* Ruta relativa, dentro de menu/ */
+        @import "https://manz.dev/index.css";   
+
+        /*Import con media queries*/
+        /* el archivo mobile.css se descargará sólo si se está utilizando una pantalla que tenga como máximo 640px de ancho, presumiblemente un dispositivo móvil. En el segundo caso, el archivo print.css se aplicará sólo si estamos imprimiendo con el navegador la página actual*/
+        @import url("mobile.css") screen and (max-width: 640px);
+        @import url("print.css") print;
+
+        /*Import condicionales */
+        /*Existe otra forma de importar condicionalmente código CSS, y es utilizando supports tras la  de nuestra regla @import. Esto permite que descarguemos y procesemos dicho archivo .css sólo si se cumple la condición del supports*/
+        /*@import url("flex-fallback.css") supports(not (display: grid));
+        @supports (display: grid) {
+        /* ... 
+        }*/
+
+        /*En este caso, estamos creando una capa reset que va a incluir código CSS que normalmente hace un reseteo en ciertas propiedades sobre la forma que funciona un navegador*/
+        /* @layer reset{
+            body {
+                margin: 0;
+                box-sizing: border-box;
+            }
+        } */
+
+        .main {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8em;
+        }
+    </style>
+</body>
+</html>

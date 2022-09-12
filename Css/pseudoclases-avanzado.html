@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudoclases Avandazas</title>
+</head>
+<body>
+    
+    <div id="main">
+        <div class="pseudoclases-avanced">
+            <div class="ejem">
+                <h2>Primer y último Hijo</h2>
+                Las dos primeras <strong>pseudoclases</strong>, :first-child y :last-child hacen referencia a <strong>los primeros y últimos elementos </strong> (al mismo nivel) respectivamente.
+                <p>Soy un span</p>
+                <strong>Soy otro strong</strong>
+            </div>
+            <div class="ejem">
+                Las dos primeras <strong>pseudoclases</strong>, :first-child y :last-child hacen referencia a <strong>los primeros y últimos elementos </strong> (al mismo nivel) respectivamente.
+                <p>Soy un span2</p>
+                <strong>Soy otro strong2</strong>
+            </div>
+            <p>span3</p>
+        </div>
+    </div>
+
+    <style>
+        /*Último elemento hijo (de cualquier tipo) del mismo nivel*/
+        strong:last-child {
+            background-color:cadetblue;
+        }
+
+        /*la pseudoclase :nth-child(A), que permite especificar el elemento deseado, simplemente estableciendo su número en el parámetro A. En este caso la etiqueta p numero 3*/
+        p:nth-child(2){
+            background-color: blueviolet;
+        }
+
+    </style>
+</body>
+</html>

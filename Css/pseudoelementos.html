@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudoelementos</title>
+</head>
+<body>
+    
+    <div id="main">
+        <div class="pseudoelementos">
+            <p>Al igual que las pseudoclases, los pseudoelementos son otra de las características de CSS que permiten hacer referencias a «comportamientos virtuales no tangibles», o lo que es lo mismo, se le puede dar estilo a elementos que no existen realmente en el HTML, y que se pueden generar desde CSS.</p>
+
+            <div class="content">
+                <h2>Propiedad content</h2>
+                <p>Propiedad para generar contenido. Sólo usable en ::before o ::after.</p>
+                <a href="feis">Ir a fb</a>            
+            </div>
+        </div>
+        <div class="content">
+            <p>Por otro lado, los pseudoelementos ::before y ::after permiten hacer referencia a «justo antes del elemento» y «justo después del elemento»</p>
+            <p>por ejemplo, ::before se encargará de añadir contenido antes del inicio de la etiqueta de apertura. De esta forma, podremos generar información (usualmente con fines decorativos) que no existe en el HTML</p>
+            <q>el elemento a la izquiera lo hizo ::before</q>
+        </div>
+    </div>
+
+    <style>
+        q::before{
+            content: "<<";
+            color: red;
+            font-weight: 900;
+        }
+        q::after{
+            content: "-->";
+            color: red;
+            font-weight: 900;
+        }
+
+        /*realiza una búsqueda de elementos que sean enlaces <a>, y posteriormente (::after) muestra un contenido de texto donde, envuelto entre paréntesis, escribe el contenido del atributo href del enlace tratado.*/
+        a::after{
+            content: " ( "attr(href) " )";
+        }
+
+        p {
+            font-family: Verdana, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /*permite dar estilo a la primera letra del texto indicado.*/
+        p::first-letter {
+            font-family: 'Times New Roman', serif;
+            font-size: 42px;
+            color: black;
+        }
+
+        /*Es muy útil para aplicar un estilo solamente a la primera línea del texto indicado.*/
+        p::first-line {
+            color: #999;
+        }
+
+    </style>
+   
+</body>
+</html>
