@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maquetación</title>
+</head>
+<body>
+    
+    <div class="main">
+        
+        <div class="display">
+            <h1>La propiedad Display</h1>
+            <p>Por defecto todos los elementos HTML tienen una propiedad, los div por ejemplo aplican la propiedad block que hace que se ponga uno sobre otro en columna, ocupando todo el espacio inline</p>
+            <p>Los elementos p span y así, tienen por defecto inline, que hace que se agrupen en linea uno consecutivo del otro</p>
+            <p>POr lo general los elemnetos que agrupan texto se comportan con inline y los que se usan para agrupar se comportan en block</p>
+            <p>La propiedad <strong>display</strong> permite cambiar este comportamiento</p>
+
+            <div class="inline-block">
+                <h2>Propiedad inline-block</h2>
+                <p>Si utilizamos la propiedad display con el valor inline-block, conseguiremos un elemento que funcionará como si fuera un elemento inline, pero haciendo caso a las propiedades width y height, las cuales se ignoran si estamos utilizando un display: inline.</p>
+                <div class="block">bloque 1</div>
+                <div class="block">bloque 2</div>
+            </div>
+
+
+            <div class="contents">
+                <h2>El valor Contents</h2>
+                <p>Hay situaciones donde se puede arruinar el diseño de maquetaciones Grid o Flex, porque son sistemas que funcionan relacionando un elemento padre con su hijo, por lo que si se cambia el marcado HTML de forma que se rompa esa relación, el diseño deja de ser efectivo.</p>
+                <p>Si introducimos un elemento con clase .middle dentro del .grid, que envuelva a todos los .item, el grid <strong>dejaría de funcionar</strong> porque se ha eliminado la relación padre-hijo entre .grid y los elementos .item. Sin embargo, si <strong>añadimos</strong> un .middle con un CSS asociado .middle <strong>{ display: contents }</strong>, el navegador ignorará ese elemento intermedio que insertamos por razones de funcionalidad (normalmente en situaciones de sólo diseño no ocurre) y <strong>hará como que no existe.</strong> </p>
+                <div class="grid">
+                    <div class="middle">  
+                        <div class="item item-1"></div>
+                        <div class="item item-2"></div>
+                        <div class="item item-3"></div>
+                        <div class="item item-4"></div>
+                        <div class="item item-5"></div>
+                        <div class="item item-6"></div>
+                    </div>
+                </div>
+                <h2>Propiedad display:none y visibility:hidden</h2>
+                <div class="none">Estoy oculto no existo</div>
+                <div class="visible">Estoy oculto pero conservo mi espacio</div>
+                <div class="check"></div>
+                <h2>Propiedad Opacity</h2>
+                <p>Perfectapara animaciones y transiciones</p>
+                <div class="opacity"></div>
+                <div class="opacity2"></div>
+                <div class="opacity3"></div>
+            </div>
+
+            <div class="position">
+                <h2>Propiedad position</h2>
+                <p>Hasta el momento hemos trabajado con el posicionamiento <strong>estático (static)</strong>, donde todos los elementos aparecen con un orden natural segpun donde estén colocadosen el HTML. Este es el modo por defecto que el navegador renderiza una página</p>
+                
+                <h3>Posicionamiento relativo (relative)</h3>
+                <p>En este modo, los elementos se colocan exactamente igual que en el posicionamiento estático (permanecen en la misma posición), pero dependiendo del valor de las propiedades top, bottom, left o right variaremos ligeramente la posición del elemento.</p>
+                <div class="relative">Relative</div>
+            
+                <h3>Posicionamiento absoluto (absolute)</h3>
+                <p>El elemento pasará a utilizar posicionamiento absoluto, que no es más que utilizar el documento completo como referencia</p>
+                <div class="absolute">Absolute</div>
+                <p>
+                   Realmente, este tipo de posicionamiento coloca los elementos utilizando como punto de origen el primer contenedor con posicionamiento diferente a estático.
+                   Por ejemplo, si el contenedor padre tiene posicionamiento estático, pasamos a mirar el posicionamiento del padre del contenedor padre, y así sucesivamente hasta encontrar un contenedor con posicionamiento no estático o llegar a la etiqueta <body>, en el caso que se comportaría como el ejemplo anterior.                    
+                </p>
+
+                <h3>Posicionamiento fijo (fixed)</h3>
+                <p>El posicionamiento fijo es hermano del posicionamiento absoluto. Funciona exactamente igual, salvo que hace que el elemento se muestre en una posición fija dependiendo de la región visual del navegador. Es decir, aunque el usuario haga scroll y se desplace hacia abajo en la página web, el elemento seguirá en el mismo sitio posicionado.</p>
+                <div class="fixed">Fixed</div>
+
+                <h3>Profundidas (Niveles O z-index)</h3>
+                <p>Es interesante conocer también la existencia de la propiedad z-index, que establece el nivel de profundidad en el que está un elemento sobre los demás. De esta forma, podemos hacer que un elemento se coloque encima o debajo de otro</p>
+                <div class="z-index">z-index</div>
+                <div class="z-index2">z-index</div>
+                <div class="z-index3">z-index</div>
+            </div>
+            
+            <div class="float">
+                <h1>La propiedad float</h1>
+                <p>Con float podemos conseguir que un elemento «flote» a la izquierda o a la derecha de otro elemento. Con el valor none (valor por defecto) eliminas esta característica de desplazamiento.</p>
+                <div class="float-ej">
+                    <p>Este es un ejemplo de un elemento flotante</p>
+                    <ul>
+                        <li>ELemento 1</li>
+                        <li>ELemento 1</li>
+                        <li>ELemento 1</li>
+                    </ul>
+                    <p>la propiedad clear se encarga de impedir elementos flotantes en la zona indicada, a la izquierda del elemento (left), a la derecha (right) o en ambos lados (both). EJ: Este parrafo sin clear quedaria al lado de los li</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <style>
+
+        .main{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+        }
+
+        .block {
+            background-color: blueviolet;
+            color:aliceblue;
+            display:inline-block;
+            width:300px;
+            margin:5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(2, 100px);
+            gap: 10px;
+        }
+
+        .middle{
+            display:contents;
+        }
+
+        .item{
+            background: deeppink;
+        }
+
+        /*Oculta de forma visual y por completo el elemento indicado.*/
+        .none{
+            display: none;
+        }
+
+        .visible{
+            background-color:tomato;
+            width: 100px;
+            height: 100px;
+            visibility: hidden;
+        }
+
+        /*Utilizar visibility: hidden es muy interesante si queremos que un elemento y su contenido se vuelva invisible, pero siga ocupando su espacio y así evitar que los elementos adyacentes se desplacen*/
+        .check{
+            background-color: black;
+            width:100px;
+            height: 100px;
+        }
+
+        .opacity{
+            background-color:tomato;
+            width: 100px;
+            height: 100px;
+            opacity: 40%;
+            display:inline-block;
+        }
+
+        .opacity2{
+            background-color:tomato;
+            width: 100px;
+            height: 100px;
+            opacity: 60%;
+            display:inline-block;
+        }
+
+        /*Por otro lado, otra opción interesante y relacionada podría ser la posibilidad de utilizar la propiedad opacity, especialmente útil si se utiliza junto a transiciones o animaciones.*/
+        .opacity3{
+            background-color:tomato;
+            width: 100px;
+            height: 100px;
+            opacity: 100%;
+            display:inline-block;
+        }
+
+        /*Con position:relative y left:40px el elemento se colocará 40 píxeles a la derecha desde la izquierda donde estaba colocado en principio*/
+        .relative {
+            background-color: chartreuse;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 30px;
+        }
+
+        .absolute{
+            background-color: chartreuse;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 40px;
+            right:40px;
+        }
+
+        .fixed{
+            background-color: chartreuse;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 0;
+            right:0;
+        }
+
+        .z-index{
+            background-color: chartreuse;
+            width: 400px;
+            height: 200px;
+            position: relative;
+            margin: 5px;
+            z-index: 1;
+        }
+        .z-index2{
+            background-color: coral;
+            width: 202px;
+            height: 100px;
+            position: relative;
+            margin: 5px;
+            z-index: 2;
+            left:160px;
+            top: -10.5em;
+            opacity: 70%;
+        }
+        .z-index3{
+            background-color: crimson;
+            width: 100px;
+            height: 50px;
+            position: relative;
+            margin: 5px;
+            z-index: 3;
+            left: 20em;
+            top:-15em;
+            opacity:0.9;
+        }
+
+        /* Float */
+        .float-ej ul{ 
+            background: grey;
+        }
+
+        .float-ej li{ 
+            background: blue;
+            width: 100px;
+            padding: 8px;
+            margin: 8px;
+            color: white;
+        }
+
+        .float-ej ul, li {
+            /*display: inline-block; Es más recomendable*/
+            float: left;
+        }
+
+        float-ej p {
+            clear: both;
+        }
+        
+    </style>
+</body>
+</html>
