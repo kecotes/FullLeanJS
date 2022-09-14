@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox2</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="resumen">
+            <h1>Resumen de FlexBox 1</h1>
+            <h4>Utilizamos solamente principalmente dos propiedades</h4>
+            <ul>
+                <li><strong>justify-content</strong>: Se utiliza para alinear los ítems del eje principal (por defecto, el horizontal).</li>
+                <li><strong>align-items</strong>: Usada para alinear los ítems del eje secundario (por defecto, el vertical).</li>
+            </ul>
+        </div>
+
+        <div class="parte2">
+            <h1>Propiedades de hijos</h1>    
+            <div class="flex-grow">              
+                <h3>flex-grow</h3>
+                <p>la propiedad flex-grow para indicar el factor de crecimiento de los ítems en el caso de que no tengan un ancho específico. Por ejemplo, si con flex-grow indicamos un valor de 1 a todos sus ítems, tendrían el mismo tamaño cada uno de ellos. Pero si colocamos un valor de 1 a todos los elementos, salvo a uno de ellos, que le indicamos 2, ese ítem será más grande que los anteriores. Los ítems a los que no se le especifique ningún valor, tendrán por defecto valor de 0.</p>
+                <h3>flex-shrink</h3>
+                <p>flex-shrink es la opuesta a flex-grow. Mientras que la anterior indica un factor de crecimiento, flex-shrink hace justo lo contrario, aplica un factor de decrecimiento. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes, justo al contrario de como funciona la propiedad flex-grow.</p>
+                <h3>flex-basis</h3>
+                <p>define el tamaño por defecto (de base) que tendrán los ítems antes de aplicarle la distribución de espacio. Generalmente, se aplica un tamaño (unidades, porcentajes, etc...), pero también se puede aplicar la palabra clave content que ajusta automáticamente el tamaño al contenido del ítem, que es su valor por defecto.</p>
+            </div>  
+        </div>
+
+    </div>
+
+
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>    
+</body>
+</html>

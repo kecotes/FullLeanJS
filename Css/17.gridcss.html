@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gird CSS</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="grid-start">
+            <ul>
+                <li>inline-grid: Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</li>
+                <li>grid: Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</li>
+            </ul>
+            <p>El primero de ellos permite que la cuadrícula aparezca encima/debajo del contenido exterior (en bloque) y el segundo de ellos permite que la cuadrícula aparezca a la izquierda/derecha (en línea) del contenido exterior (ojo, la cuadrícula entera, no cada uno de sus ítems)</p>
+            <div class="grid"> <!-- contenedor -->
+                <div class="a">Item 1</div> <!-- cada uno de los ítems del grid -->
+                <div class="b">Item 2</div>
+                <div class="c">Item 3</div>
+                <div class="d">Item 4</div>
+            </div>
+        </div>
+
+        <div class="grid-full">
+            <h2>Grid con filas y columnas</h2>
+            <p>Es posible crear cuadrículas con un tamaño explícito. Para ello, sólo tenemos que usar las propiedades CSS grid-template-columns y grid-template-rows, que sirven para indicar las dimensiones de cada celda de la cuadrícula</p>
+            <div class="grid2">
+                <div class="item g1">Item 1</div>
+                <div class="item g2">Item 2</div>
+                <div class="item g3">Item 3</div>
+                <div class="item g4">Item 4</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <style>
+        body{
+            font-size:medium;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .grid{
+            display:inline-grid; /*grid*/
+            background:yellowgreen;
+        }
+
+        .grid2{
+            /*tendremos una cuadricula con 2 columnas (la primera con 50px de ancho y la segunda con 300px de ancho) y con 2 filas (la primera con 200px de alto y la segunda con 75px de alto)*/
+            display: grid;
+            grid-template-columns: 50px 300px;
+            grid-template-rows: 200px 75px;
+            background:steelblue;
+        }
+
+    </style>
+</body>
+</html>
