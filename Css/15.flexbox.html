@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+</head>
+<body>
+    <h1>Activamos Flexbox</h1>
+    <h3>display: inline-flex o flex</h3>
+    <div class="container"> <!-- Flex container -->
+        <div class="item item-1">1</div> <!-- Flex items -->
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+    </div>
+
+    <h1>Sobre el eje principal</h1>
+    <h2>Justify Content (alinear contenido en linea (eje x)</h2>
+    <hp> sirve para colocar los ítems de un contenedor mediante una disposición concreta a lo largo del eje principal</p>
+    <p>debemos atender a la propiedad align-content, que es un caso particular del anterior. Nos servirá cuando estemos tratando con un contenedor flex multilinea, que es un contenedor en el que los ítems no caben en el ancho disponible, y por lo tanto, el eje principal se divide en múltiples líneas </p>
+    
+    <div class="box container-2">
+        <div class="items">a</div>   
+        <div class="items">b</div> 
+        <div class="items">c</div>      
+    </div>
+
+    <div class="box container-3">
+        <div class="items">d</div>   
+        <div class="items">e</div> 
+        <div class="items">f</div>
+        <div class="items">g</div>   
+        <div class="items">h</div> 
+        <div class="items">i</div>       
+    </div>
+
+    <h1>Sobre el eje secundario</h1>
+    <p>La otra propiedad importante de este apartado es align-items, que se encarga de alinear los ítems en el eje secundario del contenedor. </p> <p><span>Hay que tener cuidado de <strong>no confundir</strong> align-content con align-items, puesto que el primero actúa sobre cada una de las líneas de un contenedor multilinea (no tiene efecto sobre contenedores de una sola línea), mientras que <strong>align-items</strong> lo hace sobre la línea actual.</span>  </p>
+    <h2>align-items</h2>
+    <h4>Alinear contenido en bloque (eje y)</h4>
+    <div class="box container-4">
+        <div class="items">A</div>
+        <div class="items">B</div>
+        <div class="items">B</div>
+    </div>
+
+    <h2>align-self</h2>
+    <h4>Alinear contenido en bloque (eje y)</h4>
+    <p>actúa exactamente igual que align-items, sin embargo es la primera propiedad de flexbox que vemos que se utiliza sobre un ítem hijo específico y no sobre el elemento contenedor.</p>
+    <p>align-self nos permite cambiar el comportamiento de align-items y sobreescribirlo con comportamientos específicos para ítems concretos que no queremos que se comporten igual que el resto.</p>
+    <div class="box container-5">
+        <div class="items">A</div>
+        <div class="items">B</div>
+        <div class="items">B</div>
+        <div class="self">selft</div>
+    </div>
+
+    <h1>Propiedades Hijos</h1>
+    <ul>
+        <li>flex-grow: Número que indica el factor de crecimiento del ítem respecto al resto.</li>
+        <li>flex-shrink: Número que indica el factor de decrecimiento del ítem respecto al resto.</li>
+        <li>flex-basis: Tamaño base de los ítems antes de aplicar variación.</li>
+    </ul>
+
+    <div class="box container-6">
+        <div class="items">A</div>
+        <div class="items">B</div>
+        <div class="items">C</div>
+        <div class="self2">Soon</div>
+        <div class="items">D</div>
+        <div class="items">E</div>
+        <div class="items">F</div>
+        <div class="self2">Soon2</div>
+    </div>
+
+    <div class="test"></div>
+    <div class="test2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#0099ff" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,149.3C384,128,480,96,576,85.3C672,75,768,85,864,122.7C960,160,1056,224,1152,250.7C1248,277,1344,267,1392,261.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+    </div>
+    <div class="test3"></div>
+    <style>
+        .main{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+        }
+
+        p{
+            margin: 3px;
+        }
+
+        span{
+            font-style: italic ;
+            font-weight: 400;
+        }
+
+        /*inline-flex Establece un contenedor en línea, similar a inline-block (ocupa solo el contenido).
+        flex Establece un contenedor en bloque, similar a block (ocupa todo el ancho del padre).*/
+
+        /*Existen dos propiedades principales para manipular la dirección y comportamiento de los ítems a lo largo del eje principal del contenedor.*/
+        /*flex-direction Cambia la orientación del eje principal: Establece la dirección del eje principal en horizontal, colum en vertical*/
+        .container{
+            margin:5px;
+            display:flex;
+            flex-direction: row; /*colum*/
+            /*En ese caso, cada ítem debería tener un 50% de ancho (o sea, 100px de los 200px del contenedor). Un tamaño de 100px por ítem, sumaría un total de 300px, que no cabrían en el contenedor de 200px, por lo que flexbox reajusta los ítems flexibles para que quepan todos en la misma línea, manteniendo las mismas proporciones.*/
+            flex-wrap:wrap; /*Evita o permite el desbordamiento (multimedia). nowrap for default*/
+            /* Con flex-flow nos ahorramos usar dos propiedades (2 lineas) <flex-direction> <flex-wrap>; */
+            /* flex-flow: row wrap; */
+            background: slateblue;
+            width: 200px;
+        }
+
+        /*justigy-content: */
+        .container-2{
+            margin-bottom: 10px;
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly; /* flex-start flex-end center space-between */
+        }
+
+        .item{
+            background: slategray;
+            width:50%; /*50% del arncho del padre, osea 100px*/
+        }
+
+        /*justify-content | align-content*/
+        .container-3{
+            display:flex;
+            flex-flow: wrap;
+            align-content: flex-start; /*flex-end center spacebetween stretch*/
+        }
+
+        .box{
+            width:600px;
+            height: 200px;
+            background: rgb(158, 158, 158);
+            display: flex;
+        }
+
+        .items{
+            width: 50px;
+            height:50px;
+            background: rgb(58, 58, 170);
+        }
+
+        /*align-items*/
+        .container-4{
+            flex-flow: wrap;
+            justify-content:center;
+            align-items: center;
+        }
+
+        /*align-self*/
+        .container-5{
+            flex-flow: wrap;
+            justify-content:center;
+            align-items: center;
+        }
+
+        /*Con está propieda logramos de que un elemento pueda comportarse diferente a todo el flexbox*/
+        .self{
+            width: 50px;
+            height:50px;
+            background: rgb(218, 77, 22);
+            align-self: flex-start;
+        }
+
+        .container-6{
+            flex-flow: wrap;
+            justify-content:center;
+            align-items: center;
+        }
+
+        .self2{
+            width: 50px;
+            height:50px;
+            background: rgb(218, 77, 22);
+            flex-grow: 2;
+            flex-shrink: 3;
+            flex-basis: 50px;
+        }
+
+        .test{
+            margin-top: 20px;
+            border-radius: 26px;
+            background: #e0e0e0;
+            box-shadow:  5px 5px 20px #8f8f8f,
+             -5px -5px 20px #ffffff;
+             width:200px;
+             height: 200px;
+        }
+
+        
+        .test3{
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+            border-radius: 26px;
+            box-shadow:  5px 5px 20px #8f8f8f,
+             -5px -5px 20px #ffffff;
+            width:200px;
+             height: 200px;
+        }
+
+
+    </style>
+</body>
+</html>
