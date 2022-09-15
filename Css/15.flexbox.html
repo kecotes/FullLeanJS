@@ -56,20 +56,23 @@
 
     <h1>Propiedades Hijos</h1>
     <ul>
-        <li>flex-grow: Número que indica el factor de crecimiento del ítem respecto al resto.</li>
-        <li>flex-shrink: Número que indica el factor de decrecimiento del ítem respecto al resto.</li>
-        <li>flex-basis: Tamaño base de los ítems antes de aplicar variación.</li>
+        <li>flex-grow: Número que indica el factor de crecimiento del ítem respecto al resto. si con flex-grow indicamos un valor de 1 a todos sus ítems, tendrían el mismo tamaño cada uno de ellos. Pero si colocamos un valor de 1 a todos los elementos, salvo a uno de ellos, que le indicamos 2, ese ítem será más grande que los anteriores. Los ítems a los que no se le especifique ningún valor, tendrán por defecto valor de 0.</li>
+        <li>flex-shrink: Número que indica el factor de decrecimiento del ítem respecto al resto. flex-shrink hace justo lo contrario, aplica un factor de decrecimiento. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes</li>
+        <li>flex-basis: Tamaño base de los ítems antes de aplicar variación. define el tamaño por defecto (de base) que tendrán los ítems antes de aplicarle la distribución de espacio. Generalmente, se aplica un tamaño (unidades, porcentajes, etc...), pero también se puede aplicar la palabra clave content que ajusta automáticamente el tamaño al contenido del ítem, que es su valor por defecto</li>
     </ul>
 
     <div class="box container-6">
-        <div class="items">A</div>
-        <div class="items">B</div>
-        <div class="items">C</div>
-        <div class="self2">Soon</div>
-        <div class="items">D</div>
-        <div class="items">E</div>
-        <div class="items">F</div>
-        <div class="self2">Soon2</div>
+        <div class="items">Inicio</div>
+        <div class="items">Nosotros</div>
+        <div class="items">Portafolio</div>
+        <div class="items">Noticias</div>
+        <div class="items">Eventos</div>
+        <div class="items">Contactenos</div>
+        <div class="session">
+            <div class="soon1">Entrar</div>
+            <div class="soon2">Registrar</div>
+        </div>
+        
     </div>
 
     <div class="test"></div>
@@ -80,7 +83,7 @@
     </div>
     <div class="test3"></div>
     <style>
-        .main{
+        body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: medium;
         }
@@ -102,7 +105,7 @@
         .container{
             margin:5px;
             display:flex;
-            flex-direction: row; /*colum*/
+            flex-direction: row; /*column*/
             /*En ese caso, cada ítem debería tener un 50% de ancho (o sea, 100px de los 200px del contenedor). Un tamaño de 100px por ítem, sumaría un total de 300px, que no cabrían en el contenedor de 200px, por lo que flexbox reajusta los ítems flexibles para que quepan todos en la misma línea, manteniendo las mismas proporciones.*/
             flex-wrap:wrap; /*Evita o permite el desbordamiento (multimedia). nowrap for default*/
             /* Con flex-flow nos ahorramos usar dos propiedades (2 lineas) <flex-direction> <flex-wrap>; */
@@ -167,18 +170,27 @@
         }
 
         .container-6{
-            flex-flow: wrap;
-            justify-content:center;
-            align-items: center;
+            display: flex;
+            flex-flow: row wrap; /*Elementos en fila | Permite desbordamiento*/
+            justify-content:flex-start;
+            align-items: flex-start;
+            gap:5px 5px;
         }
 
-        .self2{
-            width: 50px;
-            height:50px;
+        .soon1{
+            /*Atajo propiedad hijos flex: <flex-grow> <flex-shrink> <flex-basis> */
+
             background: rgb(218, 77, 22);
-            flex-grow: 2;
-            flex-shrink: 3;
-            flex-basis: 50px;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 50px 50px;
+        }
+
+        .soon2{
+            background: rgb(218, 77, 22);
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 50px 50px;
         }
 
         .test{
