@@ -4,26 +4,41 @@
     <meta charset="UTF-8">
     <title>FlexBox Practice</title>
     <style>
+
+        @media screen and (max-width: 640px){
+            .menu {
+                background-color: blue;
+            }
+        }
+
+        @media screen and (min-width: 640px) and (max-width: 1280px){
+            .menu {
+                background-color: brown;
+            }
+        }
+
+        @media screen and (min-width: 1280px){
+            .menu {
+                background-color: yellow;
+            }
+        }
+
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .container{
             display:flex;
+            flex-direction:column;
             width: 600px;
         }
-
-        .item-1{
-
-        }
-        .item-2{
-
-        }
         .item-3{
-
+            justify-content: left;
+            align-items: left;
         }
         .item-4{
-            
+            justify-content: left;
+            align-items: left;
         }
     </style> 
 </head>
@@ -31,7 +46,7 @@
 
     <div class="container">
         <div class="item-1">LOGO</div>
-        <div class="item-2">Menu Principal</div>
+        <div class="menu">Menu Principal</div>
         <div class="item-3">Buscar</div>
         <div class="item-4">Login</div>
     </div>
