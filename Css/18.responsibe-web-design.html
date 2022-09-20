@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB MASTERS</title>
+    <style>
+    div {
+        /* Ponemos un alto mínimo, por defecto es 0 */
+        min-height: 200px;
+        /* Dibujamos un borde para ver límites */
+        border: 2px solid black;
+    }
+  
+    .header, .page, .footer {
+        background: grey;
+    }
+
+    /* 
+    Los elementos no entran en el width
+    .menu, .content {
+        /* Necesario para que los elementos estén en horizontal
+        display: inline-block;
+    } */
+
+    img,
+    video,
+    object,
+    embed {
+        max-width: 100%;
+        height:auto;
+    }
+
+    /*De esta forma, conseguimos que nuestro diseño se adapte de forma adecuada a la página, sin necesidad de tener que ajustar los márgenes, rellenos, bordes o tamaño de los contenidos*/
+    .page{
+        display: flex;
+    }
+    
+    .menu {
+        background: blue;
+        width: 30%;
+    }
+    
+    .content {
+        background: lightgrey;
+        width: 70%;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="header"></div>
+    <div class="page">
+        <div class="menu"></div>
+        <div class="content"></div>
+    </div>
+    <div class="footer"></div>
+    
+</body>
+</html>
