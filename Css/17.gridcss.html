@@ -53,6 +53,29 @@
                 <div class="content">Content</div>
                 <div class="footer">Footer</div>
             </div>
+
+            <h2>Grid por areas</h2>
+            <p>es posible indicar el nombre y posición concreta de cada área de una cuadrícula. Para ello utilizaremos la propiedad grid-template-areas, donde debemos especificar el orden de las áreas en la cuadrícula. Posteriormente, en cada ítem hijo, utilizamos la propiedad grid-area para indicar el nombre del área del que se trata</p>
+
+            <div class="grid5">
+                <div class="a">Header</div>
+                <div class="b">Sidebar</div>
+                <div class="c">Content</div>
+                <div class="d">Footer</div>
+            </div>
+
+            <h2>Posición en el grid </h2>
+            <p><strong>justify-items </strong> Distribuye los elementos en el eje horizontal. </p>
+            <p><strong> align-items </strong> Distribuye los elementos en el eje vertical. </p>
+            <p><strong>justify-content o align-content </strong>para modificar la distribución de todo el contenido en su conjunto, y no sólo de los ítems por separado</p>
+            
+            <div class="grid6">
+                <div class="e">Header</div>
+                <div class="f">Sidebar</div>
+                <div class="g">Content</div>
+                <div class="h">Footer</div>
+            </div>
+            
         </div>
         
     </div>
@@ -130,6 +153,23 @@
             grid-row: y2;
         }
 
+        .grid5{
+            height: 300px;
+            display: grid;
+            grid-template-areas:    "head head"
+                                    "menu main"
+                                    "foot foot";
+            gap: 10px 50px;
+        }
+
+        .a { grid-area: head; background: blue }
+        .b { grid-area: menu; background: red }
+        .c { grid-area: main; background: green }
+        .d { grid-area: foot; background: orange }
+
+        .grid6{
+            height: 300px;
+            display:grid;        }
     </style>
 </body>
 </html>

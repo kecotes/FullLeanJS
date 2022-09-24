@@ -1,0 +1,168 @@
+
+* {
+    /*Quitamos todos los margenes*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: dimgrey;
+    color:aliceblue; 
+    /*background-color: #c2ddb0; */
+    background-image: url("data:image/svg+xml,%3Csvg width='76' height='18' viewBox='0 0 76 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 18c-2.43-1.824-4-4.73-4-8 0-4.418-3.582-8-8-8H0V0h20c5.523 0 10 4.477 10 10 0 4.418 3.582 8 8 8h20c4.418 0 8-3.582 8-8 0-5.523 4.477-10 10-10v2c-4.418 0-8 3.582-8 8 0 3.27-1.57 6.176-4 8H32zM64 0c-1.67 1.256-3.748 2-6 2H38c-2.252 0-4.33-.744-6-2h32z' fill='%231b1a1b' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    text-decoration: none;  /*No tengan la raya*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+    color:aliceblue;
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+.container {
+    width: 90%;
+    margin: auto;
+}
+/*Navigation*/
+.nav-main {
+    font-size: 17px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0; /*20 arriba/abajo  0 a los lados*/
+}
+.nav-brand {
+    width: 50px;
+}
+/*Nav Left*/
+.nav-main ul {
+    display:flex;
+}
+.nav-main ul li {
+    padding: 10px; 
+}
+.nav-main ul.nav-menu{
+    flex: 1;
+    margin-left: 20px;
+}
+.nav-main ul li a {
+    padding:5px;
+}
+.nav-main ul li a:hover {
+    border-bottom: 2px solid #ffffff;
+}
+/* --- Banner --- */
+hr {
+    margin: 10px 0;
+}
+.banner {
+    width:100%;
+    height: 550px;
+    background:url('./img/8.png') no-repeat center center/cover;
+    padding-bottom: 50px;
+    margin-bottom:20px;
+    display:flex; /*Para centrar el texto de adentro*/
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-end;
+}
+.btn {
+    cursor: pointer;
+    display:inline-block;
+    border: 0;
+    font-weight: bold;
+    padding:10px 20px;
+    background-color:crimson;
+    color:#ffffff;
+    font-size:15px;
+    border:1px solid #ffffff;
+    margin-top:10px;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+.banner h2, 
+.banner p {
+    margin-bottom: 10px;
+}
+/* --- News Cards --- */
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+    margin: 10px 0;
+}
+.news-cards img {
+    width: 100%;
+    height: 180px;
+}
+.news-cards h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.news-cards a {
+    padding-top: 15px;
+    color: f2f2f2;
+    text-transform: uppercase;
+    display:inline-block; /*Etiqueta a se comporta inline, entonces al estar a la par con la etiqueta p, no aplica los css como el padding, al ponerlo en bloque si aplicamos*/
+    font-weight: bold;
+}
+.news-cards a:hover {
+    text-decoration: underline;
+}
+/*Cards Banner One*/
+.cards-banner-one {
+    width:100%;
+    height:350px;
+    background: url('./img/10.png') no-repeat center center/cover;
+    margin-bottom:40px;
+}
+.cards-banner-one .content {
+    width: 40%;
+    /* top bottom rigth left */
+    padding: 50px 0 0 30px;
+    color: #fff;
+}
+.cards-banner-one p,
+.cards-banner-one h2 {
+    margin: 10px 0 10px 0;
+}
+/* Follow */
+.follow {
+    margin: 50px;
+}
+.follow p{
+    text-align:  center;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.links a {
+    margin: 0 30px;
+}
+.links a i {
+    font-size: 3rem;
+}
+/* Footer */
+.footer-links {
+    background: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 35px 0;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:2em;
+    align-items:flex-start;
+    justify-content:center;
+}
+.footer-container ul {
+    margin: 0 auto;
+}
