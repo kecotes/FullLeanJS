@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+/*Usamos root porque tiene más especificidad*/
+:root {
+    /*Agregamos un gradiente (135grados, color de 8 numeros con valor alfa transparente stock 0%, */
+    --background: linear-gradient(135deg, #667eea7e 0%, #764ba298);
+    --color-primary: #667eea;
+    --color-secondary: #764ba2;
+    --boton-padding: 20px 40px;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    width: 90%;
+    /*Centramos con margin 0 arriba y abajo y auto a los lados*/
+    margin: 0 auto;
+    /*Para que todos los elementos que se salgan del container se escondan*/
+    overflow: hidden;
+    /*Todos los elementos que tengan un container tendran un padding de 80px arriba y abajo*/
+    padding: 80px 0;
+    max-width: 1200px;
+}
+
+.subtitle {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+}
+
+.hero {
+    /*Ocupe el 100% del alto del viewport*/
+    height: 100vh;
+    background-image:  var(--background), url('../assets/img-1.png');
+    background-repeat: no-repeat;
+    /*Para que abarque el 100% del contenedor*/
+    background-size: cover;
+    /*Para fingir el efecto paralax*/
+    background-attachment: fixed;
+    /*Para centrar el backgroud*/
+    background-position: center;
+    /*para posicionar la web*/
+    position: relative;
+}
+
+.hero .container {
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    height: 70px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.nav-footer {
+    font-weight: 300;
+    justify-content: flex-start;
+}
+
+.nav-items {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 15px;
+    /*inherit: quiere decir que hereda el font weight de su padre*/
+    font-weight: inherit;
+}
+
+.nav-items-select {
+    border: 1px solid #fff;
+}
+
+.nav-items-footer {
+    padding: 10px;
+}
+
+.hero-container {
+    display: flex;
+    height: calc(100vh - 70px);
+    align-items: center;
+    color: #fff;
+}
+
+.hero-texts {
+    width: 80%;
+    /*Para que se centre un poquito más el texto en el centro*/
+    margin-bottom: 50px;;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 15px 0;
+}
+
+.hero-button {
+    /*Para desbloquear propiedades del block model*/
+    display: inline-block;
+    background: #fff;
+    padding: var(--boton-padding);
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.hero-wave {
+    /*Para que se posicione absolutamente en su padre*/
+    position: absolute;
+    /*Para que se posicione en la posición de abajo*/
+    bottom: 0;
+    /*para que se vaya a la izquierda*/
+    left: 0;
+    width: 100%;
+    /*La ubicación del wave y los pixeles que ocupa en el espacio en height*/
+    height: 100px;
+}
+
+/* --- About --- */
+
+.presentation {
+    /*Porque ya estan los 100px del wave que cuentan como padding*/
+    padding-top: 0;
+    text-align: center;
+}
+
+.presentation-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    /*Para que no pierda resolución*/
+    object-fit: cover;
+    /*La perspectiva de la imagen es desde arriba y arregla la imagen*/
+    object-position: top;
+}
+
+.presentation-copy {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.presentation-button {
+    /*Ya que la etiqueta a es en linea, y la cambiamos a en bloque*/
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--color-primary);
+    color: #fff;
+    text-decoration: none;
+    padding: var(--boton-padding);
+    border-radius: 40px;
+}
+
+.about {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+    /*Centramos todo vertical y horizontalmente*/
+    justify-items: center;
+    align-items: center;
+}
+
+.about-parragraph {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.about-img {
+    text-align: center;
+}
+
+.about-img-left {
+    text-align: left;
+}
+
+.about-picture {
+    /*No quiero que rebases el 80 porciento de tu contenedor, y su contenedor es una figure 
+    que pertenece a una columna de grid que mide 1 fracción (1fr)*/
+    max-width: 80%;
+}
+
+/* --- Projects --- */
+
+.projects {
+    background: #f2f2f2;   
+}
+
+.projects-grid {
+    display: grid;
+    height: 550px;
+    gap: 10px;
+    grid-template-areas: 
+    "img1 img1 img2 img3"
+    "img1 img1 img4 img5 ";
+}
+
+
+.projects-item{
+    /*Para realizar el evento de hover*/
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*Permitimos que este elemento este oculto*/
+    overflow: hidden;
+} 
+
+.projects-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/*Esta pseudo clase hace que al primer elemento que encuentre con esa clase le va a aplicar estos estilos*/
+.projects-item:nth-of-type(1) {
+    grid-area: img1;
+}
+
+/*Al segundo elemento con está clase le aplicaremos estos estilos y así ... */
+.projects-item:nth-of-type(2) {
+    grid-area: img2;
+}
+
+.projects-item:nth-of-type(3) {
+    grid-area: img3;
+}
+
+.projects-item:nth-of-type(4) {
+    grid-area: img4;
+}
+
+.projects-item:nth-of-type(5) {
+    grid-area: img5;
+}
+
+.projects-hover {
+    position: absolute;
+    background: steelblue;
+    opacity: 70%;
+    /* Hacemos que estos elementos se posiciones arriba en 0 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    color: #fff;
+
+    /* Texto en el centro */
+    text-align: center;
+    /* Jugar con los elementos en bloque */
+    display: flex;
+    /* Los elementos lo direccionamos al centro en fila*/
+    flex-direction: column;
+    /* Direccionamos los elementos en columna al centro*/
+    justify-content: center;
+    cursor: pointer;
+
+    /*Ahora voy a mover este elemento (div) en un 100 porciento*/
+    transform: translateX(100%);
+    /* Aplique una transicion a los emenetos transform de 3 seg tipo easeinout */
+    transition: transform .3s ease-in-out;
+}
+
+/* Cuando un usuario pase el mouse por el emeneto item se aplique el hover sobre el elemento projects-hover */
+.projects-item:hover .projects-hover {
+    transform: translateX(0%);
+}
+
+.projects-icon {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+
+/* --- Testimonial --- */
+
+.testimony-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.testimony-item {
+    /*Ocupamos el 90% de la fracción*/
+    width: 95%;
+    margin: 0 auto;
+    background: var(--color-secondary);
+    box-shadow: 0 8px 10px rgba(54,63,43, .5);
+    border-radius: 7px;
+    padding: 30px 25px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.testimony-person {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testoimony-img {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 30px;
+}
+
+.testimony-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.testimony-verification {
+    color: #EAFAA0;
+    font-weight: 700;
+}
+
+.testimony-review {
+    font-weight: 300;
+}
+
+/* --- Footer --- */
+
+.footer {
+    background: var(--color-primary);
+}
+
+.footer-grid { 
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-title {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center,
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-container-icons {
+    /* Tiene etiquetas span (en linea) así que lo pones en bloque*/
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.footer-icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+/* Debo ser más especifico para este elemento si lo quiero centrar verticalmente, por eso agarro sus dos clases y le aplico el line height */
+.fab.footer-icon {
+    line-height: 60px;
+}
+
+/*  --- Responsive Design --- */
+
+@media screen and (max-width: 800px) {
+    :root {
+        --boton-padding: 18px 40px;
+    }
+
+    .nav {
+        justify-content: space-around;
+    }
+
+    .nav-items-select {
+        border: none;
+    }
+
+    .nav-items {
+        font-weight: 400;
+        border-bottom: 1px solid #fff;
+        margin-right: 0;
+    }
+
+    .nav-items-footer {
+        border: none;
+    }
+
+    .hero-texts {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    /* About */
+    .presentation-copy {
+        width: 100%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about.container {
+        padding-top: 30px;
+    }
+
+    .about-img-left {
+        text-align: center;
+    }
+
+    /* Aqui el problema era que aparecia texto imagen imagen texto y lo solucionamos así*/
+    /* Con está pseudoclase hacemos que este ultimo elemento vaya de la linea 3 a la linea 4*/
+    .about-texts:last-child {
+        grid-row: 3/4;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-areas: 
+        "img1 img1 img2 img2"
+        "img1 img1 img3 img3"
+        "img4 img4 img5 img5";
+    }
+
+    /* Testimony */
+    .testimony-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-contact {
+        grid-row: 1/2;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    :root {
+        --boton-padding: 18px 35px;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .nav {
+        /* Para que colapse */
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 10px;
+    }
+
+    .nav-items {
+        padding: 0 10px;
+        border: 0;
+    }
+
+    .hero-texts {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    /* About */
+    .presentation-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .about {
+        row-gap: 60px;
+    }
+
+    .about.container {
+        padding-top: 10px;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-areas: 
+        "img1"
+        "img2"
+        "img3"
+        "img4"
+        "img5";
+        height: auto;
+        /*Definimos el tamaño de las filas para que ninguna sea más grande*/
+        grid-template-rows: repeat(5, 250px);
+        /* Para cuando haya filas implicitas */
+        grid-auto-rows: 250px;
+        gap: 10px;
+    }
+
+    /* Testimony */
+    .testimony-item {
+        padding: 30px 15px;
+    }
+
+    .testimony-person {
+        flex-direction: column;
+    }
+
+    .testimony-texts {
+        text-align: center;
+    }
+
+    .testoimony-img {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    
+
+}
