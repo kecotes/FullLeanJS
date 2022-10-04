@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+:root {
+    --color-primary: #444CF7;
+    --color-title: #000;
+    --align-title: left;
+    --padding-container: 100px 0;
+    --width-container: 90%;
+    --max-width-container: 1200px;
+    --color-btn: #444CF7;
+    --text-btn: #fff;
+    --padding-btn: 20px 35px;
+    --height-shape:18em;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e7e7ee;
+}
+
+.container {
+    width: var(--width-container);
+    max-width: var(--max-width-container);
+    padding: var(--padding-container);
+    margin: 0 auto;
+    overflow:hidden;
+}
+
+/* img { 
+    max-width: 100%;
+} */
+
+.hero {
+    height: 100vh;
+    min-width: 500px;
+    position: relative;
+    /*Quitamos el padding en este unico elemento*/
+    --padding-container: 0;
+}
+
+.hero__container  {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 3fr 2fr;
+    /*Para que los elementos se centren vertical y horizontalmente*/
+    place-items: center;
+    gap: 20px;
+}
+
+.hero__title {
+    font-size: 4rem;
+}
+
+.hero__copy {
+    font-size: 1.2rem;
+    margin: 25px 0;
+}
+
+.hero__cta {
+    /*Para que acepte propiedades width y height y no tenga problemas con margin, lo convierte en bloque*/
+    display: inline-block; 
+}
+
+.hero__img {
+    width: 95%;
+}
