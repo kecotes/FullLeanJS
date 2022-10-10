@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Landing Sub Grid</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family :Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* img {
+            width: 200px;
+            height: 200px;
+        } */
+
+        .grid {
+            display: grid;
+            grid-template-columns: 5% repeat(12, 1fr) 5%;
+        }
+
+        .hero {
+            grid-column: 1/-1;
+
+           display: grid;
+           grid-template-columns: subgrid; 
+           grid-template-rows: repeat(8,1fr);
+
+           background-color: #fff;
+           height: 750px;
+        }
+
+        /*Este es un hijo más dehero creado en css*/
+        .hero::before {
+            content: "";
+            grid-column: 1/-1;
+            grid-row: 1/7;
+            background-image: linear-gradient(#3b82d325, #fafafa23), URL('./assets/lol3.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero__texts {
+            grid-column: 2/5;
+            grid-row: 2/5;
+            color: #fff;
+        }
+
+        .hero__logo {
+            font-size: 2.7rem;
+        }
+
+        .hero__copy {
+            margin-top: 3em;
+            line-height: 1.5;
+        }
+
+        .hero__champions {
+            display: grid;
+            /*Para poner una cup al lado de la otra*/
+            grid-template-columns: subgrid;
+            grid-row: 2;
+            grid-column: span 5 / -2;
+        }
+
+        .hero__champion {
+            width: 100px;
+        }
+
+        .hero__lol {
+            /*Ocupe 3 columnas y empiece desde la penultima linea*/
+            grid-column: span 3 / -2;
+            /* grid-row-start: 4;
+            grid-row-end: -1; */
+
+            grid-row: 4/-1;
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+    </style>
+
+    <body>
+        
+        <div class="grid">
+
+            <header class="hero">
+
+                <div class="hero__texts">
+                    <h2 class="hero__logo">Leaguaje Of Legends</h2>
+                    <p class="hero__copy">League of Legends, es un videojuego multijugador de arena de batalla en línea desarrollado y publicado por Riot Games. Inspirándose en Defense of the Ancients, un mapa personalizado para Warcraft III, los fundadores de Riot buscaron desarrollar un juego independiente del mismo género.</p>
+                </div>
+
+                <article class="hero__champions">
+                    <img src="./assets/cup-lol.png" class="hero__champion">
+                    <img src="./assets/cup-lol.png" class="hero__champion">
+                    <img src="./assets/cup-lol.png" class="hero__champion">
+                    <img src="./assets/cup-lol.png" class="hero__champion">
+                    <img src="./assets/cup-lol.png" class="hero__champion">
+                </article>
+
+                <img src="./assets/lol1.jpg"  class="hero__lol">
+            
+            </header>
+
+        </div>
+
+    </body>
+</html>
