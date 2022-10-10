@@ -1,0 +1,95 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(#1f3a5077, #25156667), url('./hero.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    object-fit: cover;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero__texts {
+    grid-column: 2;
+    grid-row: 1/-1;
+    align-self: center;
+
+    display: grid;
+    gap: 2em;
+
+    animation: up .8s ease-in;
+}
+
+.hero__title {
+    font-size: 3rem;
+}
+
+.hero__paragraph {
+    line-height: 1.5;
+    font-size: 1.2rem;;
+}
+
+.hero__wave {
+    grid-row:1/-1;
+    grid-column: 1/-1;
+    align-self: end;
+    height: 200px;
+    width: 100%;
+}
+
+.grid {
+    width: 70%;
+    margin: 80px auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+/*Cuando pase el mouse sobre la grid, su hijo paragrap tenga un circulo*/
+.grid:hover .grid__paragraph {
+    clip-path: circle(150% at top left);
+}
+
+.grid__img {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+}
+
+.grid__paragraph {
+    background-color: rgba(80, 77, 77, 0.575);
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    color: #000;
+    font-size: 2.5rem;
+
+    display: grid;
+    text-align: center;
+    place-items: center;
+
+    clip-path: circle(0 at top left);
+    transition: clip-path .4s;
+}
