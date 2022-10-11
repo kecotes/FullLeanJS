@@ -42,7 +42,7 @@ debug2(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
 // En este caso, el ...param está agrupando esas 5 variables en un array.
 
 const element2 = [5, 4, 3, 2];
-const [onee, ...rest] = elements;  // first = 5, rest = [4, 3, 2]
+const [onee, ...rest] = element2;  // first = 5, rest = [4, 3, 2]
 //el primer elemento del array se guarda en la variable first, sin embargo, el resto de valores, se almacena en la variable rest y se agrupa en un array
 
 
@@ -57,16 +57,70 @@ const user = {
   
   //separamos las propiedades name, role y life en variables individuales, «sacándolas» de user
   const { name, role, life } = user;
+  //const { name, ...resto } = user;
+
   /* Podemos renombrar propiedades en este caso role pasa a ser type
   const { name, role: type, life } = user;
+
   Podemos tambien agregar valores por defecto y en caso está propieda no tenga un valor o no exista, ya lo tenga.
-  const { name, role = "normal user", life = 100 } = user;
-  */
+  const { name, role = "normal user", life = 100 } = user; */
+
+ // console.log(name, resto);
   console.log(name);
   console.log(role, life);
   
   //En esta línea, «volvemos a estructurar» en un objeto, uniendo las diferentes variables en un objeto a la hora de mostrarlo por consola.
   console.log({ name, role, life });
 
+  console.log('--- Reestructuración de Objetos ---');
+
+  const artist = {
+    name: "kaze O",
+    gender: "male",
+    songs: 56,
+  }
+
+  const group = {
+    ...artist,
+    disks: 7,
+    members: 12,
+  }
+
+  console.log(group);
+
+
+  console.log('--- Pasando datos complejos ---');
+
+  const artist2 = {
+    name: "Nach",
+    gender: "male",
+    songs: 106,
+    countries: ["Colombia", "España", "EEUU"],
+  }
+
+  /*Todas las propiedades originales se pasan por valor (se copia el valor en el nuevo objeto), sin embargo, el array es un tipo de dato complejo, 
+  y Javascript lo que hace es poner una referencia al valor original. En resumen, los tipos de datos complejos no son copias, son referencias (algo así como accesos directos).*/
+  const group2 = {
+    ...artist2,
+    disk: 11,
+    members: 16,
+  }
+
+  console.log(group2);
+  console.log(group2.countries); // ["Colombia", "España", "EEUU"]
+  group2.countries[0] = "Polombia";
+  console.log(group2.countries);
+  // Apesar que editamos el objeto agrupación, por referencia, tambien editamos el orginal array en artist
+  console.log(artist2.countries);
+
+  // Para solucionar esto, utilizamos la función structuredClone() a la cuál le pasamos el objeto a copiar
+
+  const group3 = {
+    ...structuredClone(artist2),
+    disk: 11,
+    members: 16,
+  }
+
+  group3.countries[1] = "España tio";
 
 
