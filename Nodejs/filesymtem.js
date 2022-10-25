@@ -11,3 +11,36 @@ const title = "creado por codigo";
 fs.writeFileSync("./data/four.txt", title, {
 	flag: "a",
 });
+
+/* Callback Hell */
+fs.readFile("./data/first.txt", function (error, data) {
+	console.log("ok, terminó");
+	if (error) return console.log(error);
+
+	console.log(data.toString());
+
+	fs.readFile("./data/second.txt", function (error, data) {
+		console.log("ok, terminó");
+		if (error) return console.log(error);
+
+		console.log(data.toString());
+
+		fs.writeFile(
+			"./data/new2.txt",
+			"Archivo creado con fs",
+			(err, data) => {
+				console.log(err);
+				console.log(data);
+
+				fs.writeFile(
+					"./data/new3.txt",
+					"Archivo creado con fs",
+					(err, data) => {
+						console.log(err);
+						console.log(data);
+					}
+				);
+			}
+		);
+	});
+});
