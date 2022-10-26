@@ -1,8 +1,9 @@
-const hamburgerIcon = document.querySelector(".nav__hamburger");
+const hamburguerIcon = document.querySelector(".nav__hamburguer");
 const navOverlay = document.querySelector(".nav__overlay");
+let currentDropdown = navOverlay;
 
-hamburgerIcon.addEventListener("click", () => {
-	hamburgerIcon.classList.toggle("nav__hamburger--open");
+hamburguerIcon.addEventListener("click", () => {
+	hamburguerIcon.classList.toggle("nav__hamburguer--open");
 
 	navOverlay.classList.toggle("nav__overlay--show");
 });
@@ -10,10 +11,9 @@ hamburgerIcon.addEventListener("click", () => {
 /*Escucho constantemenete en que elementos del nav estoy dando click */
 navOverlay.addEventListener("click", (e) => {
 	e.preventDefault();
-	/* console.log(e.target.classList.value); */
-
 	//El elemento actual al que le doy click
 	const currentElement = e.target;
+	// console.log(e.target.classList.value);
 
 	if (isActive(currentElement, "nav__parent")) {
 		//Estamos dentro de un nav__parent;
@@ -31,7 +31,12 @@ navOverlay.addEventListener("click", (e) => {
 
 			subMenu.style.height = `${height}px`;
 		} else {
+			if (!isActive(subMenu, "nav__inner--show")) {
+				closeDropdown(currentDropdown);
+			}
 			subMenu.classList.toggle("nav__inner--show");
+
+			currentDropdown = subMenu;
 		}
 	}
 });
@@ -42,8 +47,16 @@ function isActive(element, string) {
 	return element.classList.value.includes(string);
 }
 
+function closeDropdown(currentDropdown) {
+	if (isActive(currentDropdown, "nav__inner--show")) {
+		currentDropdown.classList.remove("nav__inner--show");
+	}
+}
+
 window.addEventListener("resize", () => {
 	//Cada vez que entramos a un tamaño mayor a 768 se cierran los sub menu
+	closeDropdown(currentDropdown);
+
 	if (window.innerWidth > 768) {
 		const navInners = document.querySelectorAll(".nav__inner");
 
