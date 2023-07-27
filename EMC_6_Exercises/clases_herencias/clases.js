@@ -83,4 +83,35 @@ josue.verlaNada();
 
 console.log( typeof kev);
 console.log(kev instanceof Usuario)
-console.log(josue instanceof kev )
+//console.log(josue instanceof kev )
+
+
+class Aprendiz extends Persona {
+    constructor(nombre, programa, competencia, aprendices){
+        super(nombre);
+        this.programa = programa;
+        this.competencia = competencia;
+        this.aprendices = aprendices;
+    }
+
+    showDataAprendiz(){
+        console.log("Datos del aprendiz: " + this.nombre + " " + this.programa + " " +
+         this.competencia);
+    }
+    comprobar(){
+        let i = 0;
+        while(i < this.aprendices.length){
+            if(this.aprendices[i].startsWith('J')){
+                console.log("Este es el nombre que empieza por J: " + this.aprendices[i]);
+            }else{
+                console.log("Estos son los nombres extra: " + this.aprendices[i])
+            }
+        i++;
+        }
+    }
+}
+
+let aprendices = ["Juan", "Camilo", "Militza", "Raul"];
+let juan = new Aprendiz("Juan", "Motores", "Mantenimiento de vehiculos", aprendices);
+console.log(juan.showDataAprendiz())
+juan.comprobar();

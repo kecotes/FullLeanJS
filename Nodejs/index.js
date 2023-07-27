@@ -1,5 +1,9 @@
 console.log("Hola desde node");
 /*** --- Modulo Path --- ***/
+process
+process.version
+process.versions.v8
+proccess.cwd() //Donde estoy
 
 const path = require("path");
 

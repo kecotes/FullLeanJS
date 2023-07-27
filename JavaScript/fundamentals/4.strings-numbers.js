@@ -28,6 +28,8 @@ makeButton("primary", "Aceptar");
 makeButton("warning", "Eliminar");
 
 
+
+
 //Posición de cierto carácter
 const phrase ="JavaScript es genial ve"; //22 carácteres
 console.log(phrase.indexOf("v")); // Posicion donde está la letra v

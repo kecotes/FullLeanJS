@@ -26,11 +26,11 @@ console.log( PERSONA.nombre );
 console.log( IMPUESTO_SV );
 
 // ------------ Variables for ------------
-/* 
+
 for( let i = 0; i <= 10; i++ ){
     //
     //
     console.log(i);
 }
 
-console.log(i); */
+console.log(i);

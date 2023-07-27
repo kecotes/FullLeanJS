@@ -13,6 +13,7 @@ console.log("***Operador AND &&***");
 console.log(45 && false); //45
 console.log(50 && "10"); //10
 
+
 let isCorrect = false;
 const doTask = () => "OK!"; // Creamos función que devuelve "OK!"
 console.log(isCorrect && doTask()); // Si isCorrect es true, ejecuta doTask()
